@@ -3,19 +3,27 @@ import {defineStore} from 'pinia';
 const useSettingsStore = defineStore('settings', {
     state: () => ({
         twoFactorAuth: false,
-        emailNotifications: false,
-        darkMode: false,
+        loginFromNewDevices: false,
+        autoLogout: false,
+        showEmailFromPublicProfile: false,
+        allowDataCollectionForAnalytics: false,
     }),
     actions: {
         toggleTwoFactorAuth(checked) {
             this.twoFactorAuth = checked;
         },
-        toggleEmailNotifications(checked) {
-            this.emailNotifications = checked;
+        toggleLoginFromNewDevices(checked) {
+            this.loginFromNewDevices = checked;
         },
-        toggleDarkMode(checked) {
-            this.darkMode = checked;
+        toggleAutoLogout(checked) {
+            this.autoLogout = checked;
         },
+        toggleEmailFromPublicProfile(checked) {
+            this.showEmailFromPublicProfile = checked;
+        },
+        toggleDataCollectionForAnalytics(checked) {
+            this.allowDataCollectionForAnalytics = checked;
+        }
     }
 });
 

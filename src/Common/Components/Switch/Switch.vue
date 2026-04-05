@@ -49,7 +49,7 @@
 <style scoped>
     .switch_container{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 20px;
     }
@@ -64,7 +64,12 @@
     }
 
     .switch_label{
-
+        color: var(--preset-text-color);
+        font-family: var(--preset-text-4-font-family);
+        font-size: var(--preset-text-4-font-size);
+        font-weight: var(--preset-text-4-font-weight);
+        line-height: var(--preset-text-4-line-height);
+        letter-spacing: var(--preset-text-4-letter-spacing);
     }
     .dot{
         width: 20px;
