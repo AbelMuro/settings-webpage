@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import {ref, watch} from 'vue';
+    import { storeToRefs } from 'pinia';
     import {motion} from 'motion-v';
     import useSettingsStore from '../../../Store';
     const {setting, label} = defineProps({
@@ -19,16 +20,13 @@
     }
 
     const store = useSettingsStore();
+    const { [setting]: checked } = storeToRefs(store);
     const dispatchAction = store[`toggle${setting}`];
-    const isChecked = ref(false);
 
     const handleChecked = () => {
-        isChecked.value = !isChecked.value;
+        dispatchAction(!checked.value);
     }
 
-    watch(isChecked, (newValue) => {
-        dispatchAction(newValue)
-    })
 </script>
 
 <template>  
@@ -40,11 +38,11 @@
                 @click="handleChecked" 
                 class="switch"
                 :initial="false"
-                :animate="isChecked ? {backgroundColor: '#0000ff'} : {backgroundColor: '#4444ff'}"
+                :animate="checked ? {backgroundColor: '#0000ff'} : {backgroundColor: '#4444ff'}"
                 >
                     <motion.div 
                         :initial="false"
-                        :animate="isChecked ? {x: 30} : {x: 0}"
+                        :animate="checked ? {x: 30} : {x: 0}"
                         :transition="{duration: 0.2, type: 'spring', stiffness: 700, damping: 30}"
                         class="dot">
                     </motion.div>

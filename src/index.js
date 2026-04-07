@@ -7,6 +7,7 @@ import SecurityPrivacy from './Components/SecurityPrivacy';
 import Notifications from './Components/NotificationPreferences';
 import MessagingFeatures from './Components/MessagingFeatures';
 import Appearance from './Components/Appearance';
+import DisplaySearchResults from './Components/DisplaySearchResults';
 import App from './App.vue';
 
 const app = createApp(App);
@@ -38,6 +39,10 @@ const router = createRouter({
                 {
                     path: 'appearance',
                     component: Appearance
+                },
+                {
+                    path: 'search-results',
+                    component: DisplaySearchResults
                 }
             ]
         }

@@ -13,8 +13,6 @@
 </template>
 
 <style>
-
-
     body{
         padding: 0px;
         margin: 0px;
@@ -23,7 +21,7 @@
 
     *{
         box-sizing: border-box;
-        transition: all 0.2s linear, opacity 0, transform 0;
+        transition: all 0.2s linear, opacity 0s, transform 0s;
     }
 
     @font-face {

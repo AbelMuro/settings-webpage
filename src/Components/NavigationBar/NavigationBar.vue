@@ -67,10 +67,12 @@
 <style scoped>
     .nav_bar{
         width: 300px;
-        height: 100%;
+        height: fit-content;
         border-radius: 15px;
         padding: 20px 0px 20px 20px;
         background-color: var(--preset-background-color-1);
+        grid-column: 1/2;
+        grid-row: 1/3;
     }
 
     .nav_options{

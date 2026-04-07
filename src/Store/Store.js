@@ -2,120 +2,122 @@ import {defineStore} from 'pinia';
 
 const useSettingsStore = defineStore('settings', {
     state: () => ({
-        twoFactorAuth: false,
-        loginFromNewDevices: false,
-        autoLogout: false,
-        showEmailFromPublicProfile: false,
-        allowDataCollectionForAnalytics: false,
+        searchQuery: '',
 
+        TwoFactorAuth: false,
+        LoginFromNewDevices: false,
+        AutoLogout: false,
+        EmailFromPublicProfile: false,
+        DataCollectionForAnalytics: false,
         /* 
             Account & Identity
         */
-        enableUsernameChanges: false,
-        enablePrivateProfile: false,
-        enableEmailNotifications: false,
-        enableSMSNotifications: false,
+        UsernameChanges: false,
+        PrivateProfile: false,
+        EmailNotifications: false,
+        SMSNotifications: false,
 
         /* 
             Notification Preferences
         */
-        enablePushNotifications: false,
-        enableEmailSummary: false,
-        enableInAppAlerts: false,
-        enableSoundVibration: false,
-        enableMarketingEmails: false,
-
+        PushNotifications: false,
+        EmailSummary: false,
+        InAppAlerts: false,
+        SoundVibration: false,
+        MarketingEmails: false,
         /* 
             Messaging Features
         */
-        allowReadReceipts: false,
-        allowTypingIndicators: false,
-        allowMessageReactions: false,
-        allowMessageEditing: false,
-        allowMessageDeletion: false,
-
+        ReadReceipts: false,
+        TypingIndicators: false,
+        MessageReactions: false,
+        MessageEditing: false,
+        MessageDeletion: false,
         /* 
             Appearance
         */
 
-        enableDarkMode: false,
-        enableCompactMode: false,
-        enableCustomThemes: false,
-        enableFontSizeAdjustment: false,
-        enableHighContrastMode: false
+        DarkMode: false,
+        CompactMode: false,
+        CustomThemes: false,
+        FontSizeAdjustment: false,
+        HighContrastMode: false
     }),
     actions: {
+        updateSearchQuery(query) {
+            this.searchQuery = query;
+        },
         toggleTwoFactorAuth(checked) {
-            this.twoFactorAuth = checked;
+            this.TwoFactorAuth = checked;
         },
         toggleLoginFromNewDevices(checked) {
-            this.loginFromNewDevices = checked;
+            this.LoginFromNewDevices = checked;
         },
         toggleAutoLogout(checked) {
-            this.autoLogout = checked;
+            this.AutoLogout = checked;
         },
         toggleEmailFromPublicProfile(checked) {
-            this.showEmailFromPublicProfile = checked;
+            this.EmailFromPublicProfile = checked;
         },
         toggleDataCollectionForAnalytics(checked) {
-            this.allowDataCollectionForAnalytics = checked;
+            this.DataCollectionForAnalytics = checked;
         },
         toggleUsernameChanges(checked) {
-            this.enableUsernameChanges = checked;
+            this.UsernameChanges = checked;
         },
         togglePrivateProfile(checked) {
-            this.enablePrivateProfile = checked;
+            this.PrivateProfile = checked;
         },
         toggleEmailNotifications(checked) {
-            this.enableEmailNotifications = checked;
+            this.EmailNotifications = checked;
         },
         toggleSMSNotifications(checked) {
-            this.enableSMSNotifications = checked;
+            this.SMSNotifications = checked;
         },
         togglePushNotifications(checked) {
-            this.enablePushNotifications = checked;
+            this.PushNotifications = checked;
         },
         toggleEmailSummary(checked) {
-            this.enableEmailSummary = checked;
+            this.EmailSummary = checked;
         },
         toggleInAppAlerts(checked) {
-            this.enableInAppAlerts = checked;           
+            this.InAppAlerts = checked;           
         },
         toggleSoundVibration(checked) {
-            this.enableSoundVibration = checked;
+            this.SoundVibration = checked;
         },
         toggleMarketingEmails(checked) {
-            this.enableMarketingEmails = checked;
+            this.MarketingEmails = checked;
         },
         toggleReadReceipts(checked) {
-            this.allowReadReceipts = checked;
+            this.ReadReceipts = checked;
         },
         toggleTypingIndicators(checked) {
-            this.allowTypingIndicators = checked;
+            this.TypingIndicators = checked;
         },
         toggleMessageReactions(checked) {
-            this.allowMessageReactions = checked;
+            this.MessageReactions = checked;
         },
         toggleMessageEditing(checked) {
-            this.allowMessageEditing = checked;
+            this.MessageEditing = checked;
         },
         toggleMessageDeletion(checked) {
-            this.allowMessageDeletion = checked;
+            this.MessageDeletion = checked;
         },
         toggleDarkMode(checked) {
-            this.enableDarkMode = checked;
+            this.DarkMode = checked;
         },
         toggleCompactMode(checked) {
-            this.enableCompactMode = checked;
+            this.CompactMode = checked;
         },
         toggleCustomThemes(checked) {
-            this.enableCustomThemes = checked;
+            this.CustomThemes = checked;
         },
         toggleFontSizeAdjustment(checked) {
-            this.enableFontSizeAdjustment = checked;
+            this.FontSizeAdjustment = checked;
         },
         toggleHighContrastMode(checked) {
-            this.enableHighContrastMode = checked;
+            this.HighContrastMode = checked;
         }
     }     
 });

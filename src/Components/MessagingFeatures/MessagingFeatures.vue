@@ -29,5 +29,7 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        grid-column: 2/3;
+        grid-row: 2/3;
     }
 </style>
