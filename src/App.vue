@@ -2,8 +2,9 @@
     import { RouterView } from 'vue-router';
 
     /* 
-        this is where i left off, i need to make sure that toggleling the switches updated the
-        corresponding setting in the global store
+        this is where i left off, i need to finish working on the DIsplaySearchResult component, i need to find
+
+        a way to display switch components dynamically based on the search query.
     */
 
 </script>
