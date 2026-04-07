@@ -1,13 +1,26 @@
 <script setup lang="ts">
+    import {motion} from 'motion-v'; 
     import Switch from '../../Common/Components/Switch';
+
+    const variants = {
+        hidden: {},
+        visible: {}
+    }
 </script>
 
 <template>
-    <div class="switches">
-        <Switch label="Enable Two-Factor Authentication" setting="TwoFactorAuth"/>
-        <Switch label="Enable Email Notifications" setting="EmailNotifications"/>
-        <Switch label="Enable Dark Mode" setting="DarkMode"/>
-    </div>
+    <motion.div 
+        initial="hidden"
+        animate="visible"
+        :variants="variants"
+        :transition="{staggerChildren: 0.06}"
+        class="switches">
+            <Switch label="Enable Push Notifications" setting="PushNotifications"/>
+            <Switch label="Enable Email Summary" setting="EmailSummary"/>
+            <Switch label="Enable In App Alerts" setting="InAppAlerts"/>
+            <Switch label="Enable Sound Vibration" setting="SoundVibration"/>   
+            <Switch label="Enable Marketing Emails" setting="MarketingEmails"/>
+    </motion.div>
 </template>
 
 <style scoped>

@@ -1,45 +1,64 @@
 <script setup lang="ts">
+    import {watch, ref} from 'vue';
     import {useRouter} from 'vue-router';
+    import {motion} from 'motion-v';
 
     const router = useRouter();
+    const selectedOption = ref<string>('');    
 
     const handleOptions = (option: string) => {
         router.push(option);
     };
+
+    watch(router.currentRoute, (currentRoute) => {
+        const newPathname = currentRoute.path;
+        selectedOption.value = newPathname;
+    }, {immediate: true});
 </script>
 
 <template>
     <nav class="nav_bar">
         <ul class="nav_options">
             <li class="nav_option">
-                <button @click="() => handleOptions('/')">
+                <motion.button 
+                    @click="() => handleOptions('/')" 
+                    :initial="false"
+                    :animate="selectedOption === '/' ? {backgroundColor: '#00008f'} : {backgroundColor: '#00005a'}">
                     <div class='nav_icon'/>
                     Account & Identity
-                </button>
+                </motion.button>
             </li>
             <li class="nav_option">
-                <button @click="() => handleOptions('security-privacy')">
+                <motion.button @click="() => handleOptions('security-privacy')" 
+                    :initial="false" 
+                    :animate="selectedOption === '/security-privacy' ? {backgroundColor: '#00008f'} : {backgroundColor: '#00005a'}" >
                     <div class='nav_icon'/>
                     Security & Privacy
-                </button>
+                </motion.button>
             </li>
             <li class="nav_option">
-                <button @click="() => handleOptions('notifications')">
+                <motion.button @click="() => handleOptions('notifications')" 
+                    :initial="false" 
+                    :animate="selectedOption === '/notifications' ? {backgroundColor: '#00008f'} : {backgroundColor: '#00005a'}" >
                     <div class='nav_icon'/>
                     Notification Preferences
-                </button>
+                </motion.button>
             </li>
             <li class="nav_option">
-                <button @click="() => handleOptions('messaging-features')">
+                <motion.button @click="() => handleOptions('messaging-features')" 
+                    :initial="false" 
+                    :animate="selectedOption === '/messaging-features' ? {backgroundColor: '#00008f'} : {backgroundColor: '#00005a'}" >
                     <div class='nav_icon'/>
                     Messaging Features
-                </button>
+                </motion.button>
             </li>
             <li class="nav_option">
-                <button @click="() => handleOptions('appearance')">
+                <motion.button @click="() => handleOptions('appearance')" 
+                    :initial="false" 
+                    :animate="selectedOption === '/appearance' ? {backgroundColor: '#00008f'} : {backgroundColor: '#00005a'}">
                     <div class='nav_icon'/>
                     Appearance
-                </button>
+                </motion.button>
             </li>
         </ul>
     </nav>
@@ -51,7 +70,7 @@
         height: 100%;
         border-radius: 15px;
         padding: 20px 0px 20px 20px;
-        background-color: var(--preset-background-color-1)
+        background-color: var(--preset-background-color-1);
     }
 
     .nav_options{
@@ -67,13 +86,19 @@
         flex-direction: column;
     }
 
+    .nav_option{
+        width: 100%;
+    }
+
     .nav_option > button{
+        width: 100%;
         cursor: pointer;
         color: var(--preset-text-color);
-        background-color: transparent;
-        padding: 0px;
+        background-color: var(--preset-background-color-1);
+        padding: 10px;
+        border-radius: 10px 0px 0px 10px;
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         gap: 10px;
         border: none;

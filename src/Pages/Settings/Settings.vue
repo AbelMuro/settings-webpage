@@ -5,16 +5,17 @@
 </script>
 
 <template>
-    <section class="container">
-        <NavigationBar/>
-        <RouterView/>
+    <section 
+        class="container">
+            <NavigationBar/>
+            <RouterView/>
     </section>
 </template>
 
 <style scoped>
     .container{
         width: 700px;
-        height: fit-content;
+        height: 500px;
         border-radius: 15px;
         padding: 20px;
         position: absolute;
@@ -24,5 +25,6 @@
         display: flex;
         justify-content: space-between;
         align-items: start;
+        transition: none;
     }
 </style>

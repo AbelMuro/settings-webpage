@@ -11,7 +11,12 @@
             type: String,
             required: true
         }
-    })
+    });
+
+    const variants = {
+        hidden: {x: -50, opacity: 0},
+        visible: {x: 0, opacity: 1}
+    }
 
     const store = useSettingsStore();
     const dispatchAction = store[`toggle${setting}`];
@@ -27,22 +32,24 @@
 </script>
 
 <template>  
-    <div class="switch_container">
-        <label class="switch_label">{{ label }}</label>
-        <motion.div 
-            @click="handleChecked" 
-            class="switch"
-            :initial="false"
-            :animate="isChecked ? {backgroundColor: '#0000ff'} : {backgroundColor: '#4444ff'}"
-            >
-                <motion.div 
-                    :initial="false"
-                    :animate="isChecked ? {x: 30} : {x: 0}"
-                    :transition="{duration: 0.2, type: 'spring', stiffness: 700, damping: 30}"
-                    class="dot">
-                </motion.div>
-        </motion.div>
-    </div>
+    <motion.div 
+        :variants="variants"
+        class="switch_container">
+            <label class="switch_label">{{ label }}</label>
+            <motion.div 
+                @click="handleChecked" 
+                class="switch"
+                :initial="false"
+                :animate="isChecked ? {backgroundColor: '#0000ff'} : {backgroundColor: '#4444ff'}"
+                >
+                    <motion.div 
+                        :initial="false"
+                        :animate="isChecked ? {x: 30} : {x: 0}"
+                        :transition="{duration: 0.2, type: 'spring', stiffness: 700, damping: 30}"
+                        class="dot">
+                    </motion.div>
+            </motion.div>
+    </motion.div>
 
 </template>
 

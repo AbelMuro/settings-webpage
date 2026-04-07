@@ -2,8 +2,8 @@
     import { RouterView } from 'vue-router';
 
     /* 
-        this is where i left off, i need to continue organizing the switch components with their
-        corresponding settings in the global store.
+        this is where i left off, i need to make sure that toggleling the switches updated the
+        corresponding setting in the global store
     */
 
 </script>
@@ -23,7 +23,7 @@
 
     *{
         box-sizing: border-box;
-        transition: all 0.2s linear;
+        transition: all 0.2s linear, opacity 0, transform 0;
     }
 
     @font-face {
