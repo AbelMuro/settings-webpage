@@ -36,6 +36,8 @@
     .search_container{
         width: 150px;
         height: 40px;
+        grid-column: 2/3;
+        grid-row: 1/2;
         justify-self: end;
     }
     .search_input{
@@ -46,7 +48,7 @@
         background-color: white;
         border: 4px solid transparent;
         background-clip: padding-box;
-        color: var(--preset-text-color);
+        color: black;
         font-family: var(--preset-text-4-font-family);
         font-size: var(--preset-text-4-font-size);
         font-weight: var(--preset-text-4-font-weight);
@@ -57,6 +59,10 @@
     .search_input:focus{
         outline: none;
         border: 4px solid var(--preset-background-color-1)
+    }
+
+    .search_input::placeholder{
+        color: rgb(0, 0, 0, 0.3);
     }
 
 </style>

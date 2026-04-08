@@ -2,6 +2,7 @@
     import { RouterView } from 'vue-router';
     import NavigationBar from '../../Components/NavigationBar';
     import Search from '../../Components/Search';
+    import BackButton from '../../Components/BackButton';
 
 </script>
 
@@ -9,6 +10,7 @@
     <section 
         class="container">
             <NavigationBar/>
+            <BackButton/>
             <Search/>
             <RouterView/>
     </section>

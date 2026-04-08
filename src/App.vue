@@ -2,9 +2,7 @@
     import { RouterView } from 'vue-router';
 
     /* 
-        this is where i left off, i need to finish working on the DIsplaySearchResult component, i need to find
-
-        a way to display switch components dynamically based on the search query.
+        this is where i left off, i need to complete the BackButton functionality for the app
     */
 
 </script>
