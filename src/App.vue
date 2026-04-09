@@ -2,7 +2,9 @@
     import { RouterView } from 'vue-router';
 
     /* 
-        this is where i left off, i need to complete the BackButton functionality for the app
+        this is where i left off, i am working on the responsiveness of the app.
+
+        i am currently in the navigation bar component
     */
 
 </script>

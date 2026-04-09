@@ -2,6 +2,7 @@
     import {watch, ref} from 'vue';
     import {useRouter} from 'vue-router';
     import {motion} from 'motion-v';
+    import icons from './icons';
 
     const router = useRouter();
     const selectedOption = ref<string>('');    
@@ -18,6 +19,7 @@
 
 <template>
     <nav class="nav_bar">
+        <img class="nav_logo" :src="icons['logo']"/>
         <ul class="nav_options">
             <li class="nav_option">
                 <motion.button 
@@ -73,6 +75,17 @@
         background-color: var(--preset-background-color-1);
         grid-column: 1/2;
         grid-row: 1/3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .nav_logo{
+        width: 60px;
+        object-fit: contain;
+        justify-self: center;
     }
 
     .nav_options{
@@ -154,6 +167,14 @@
 
     .nav_option > button:active > .nav_icon{
         background-color: var(--preset-text-color-active);
+    }
+
+    @media(max-width: 750px){
+        .nav_bar{
+            width: 100%;   
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
     }
 
 </style>

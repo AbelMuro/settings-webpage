@@ -33,4 +33,12 @@
         row-gap: 20px;
         transition: none;
     }
+
+    @media(max-width: 750px){
+       .container{
+            grid-template-columns: 1fr;
+            grid-template-rows: initial;
+       } 
+    }
+    
 </style>

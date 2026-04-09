@@ -31,4 +31,11 @@
         grid-column: 2/3;
         grid-row: 2/3;
     }
+
+    @media(max-width: 750px){
+        .switches{
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+    }
 </style>

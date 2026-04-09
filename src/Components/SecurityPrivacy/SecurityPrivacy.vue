@@ -30,4 +30,11 @@
         flex-direction: column;
         gap: 20px;
     }
+
+    @media(max-width: 750px){
+        .switches{
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+    }
 </style>

@@ -65,4 +65,10 @@
         color: rgb(0, 0, 0, 0.3);
     }
 
+    @media(max-width: 750px){
+        .search_container{
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+    }
 </style>
