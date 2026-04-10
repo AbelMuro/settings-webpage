@@ -3,6 +3,7 @@
     import NavigationBar from '../../Components/NavigationBar';
     import Search from '../../Components/Search';
     import BackButton from '../../Components/BackButton';
+    import MobileNavigationBar from '../../Components/MobileNavigationBar';
 
 </script>
 
@@ -14,6 +15,7 @@
             <Search/>
             <RouterView/>
     </section>
+    <MobileNavigationBar/>
 </template>
 
 <style scoped>
@@ -36,6 +38,7 @@
 
     @media(max-width: 750px){
        .container{
+            width: 90%;
             grid-template-columns: 1fr;
             grid-template-rows: initial;
        } 

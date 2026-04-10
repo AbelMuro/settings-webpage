@@ -66,6 +66,7 @@
         border-radius: 15px;
         cursor: pointer;
         color: #44d3ff;
+        flex-shrink: 0;
     }
 
     .switch_label{

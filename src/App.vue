@@ -58,7 +58,7 @@
         --preset-text-4-font-family: 'outfit';
         --preset-text-4-font-size: 1rem;
         --preset-text-4-font-weight: 300;
-        --preset-text-4-line-height: 1.75rem;
+        --preset-text-4-line-height: 1.5rem;
         --preset-text-4-letter-spacing: 0px;
     }
 </style>

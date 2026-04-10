@@ -83,7 +83,7 @@
     @media(max-width: 750px){
         .back_button{
             grid-column: 1/2;
-            grid-row: 2/3;
+            grid-row: 1/2;
         }
     }
 

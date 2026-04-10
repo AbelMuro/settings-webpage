@@ -67,6 +67,7 @@
 
     @media(max-width: 750px){
         .search_container{
+            width: 100%;
             grid-column: 1/2;
             grid-row: 2/3;
         }

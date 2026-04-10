@@ -117,6 +117,7 @@
 
     @media(max-width: 750px){
         .switches{
+            width: 100%;
             grid-column: 1/2;
             grid-row: 3/4;
         }

@@ -3,9 +3,11 @@
     import {useRouter} from 'vue-router';
     import {motion} from 'motion-v';
     import icons from './icons';
+    import {useMediaQuery} from '../../Common/Hooks';
 
     const router = useRouter();
     const selectedOption = ref<string>('');    
+    const [mobile] = useMediaQuery<string>('(max-width: 750px)');
 
     const handleOptions = (option: string) => {
         router.push(option);
@@ -18,7 +20,7 @@
 </script>
 
 <template>
-    <nav class="nav_bar">
+    <nav class="nav_bar" v-if="!mobile">
         <img class="nav_logo" :src="icons['logo']"/>
         <ul class="nav_options">
             <li class="nav_option">
@@ -142,23 +144,23 @@
     }
 
     .nav_option:nth-of-type(1) .nav_icon{
-        mask-image: url('./icons/user-icon.svg');
+        mask-image: url('../../Common/icons/user-icon.svg');
     }
 
     .nav_option:nth-of-type(2) .nav_icon{
-        mask-image: url('./icons/lock-icon.svg');
+        mask-image: url('../../Common/icons/lock-icon.svg');
     }
 
     .nav_option:nth-of-type(3) .nav_icon{
-        mask-image: url('./icons/bell-icon.svg');
+        mask-image: url('../../Common/icons/bell-icon.svg');
     }
 
     .nav_option:nth-of-type(4) .nav_icon{
-        mask-image: url('./icons/comment-icon.svg');
+        mask-image: url('../../Common/icons/comment-icon.svg');
     }
 
     .nav_option:nth-of-type(5) .nav_icon{
-        mask-image: url('./icons/half-icon.svg');
+        mask-image: url('../../Common/icons/half-icon.svg');
     }
 
     .nav_option > button:hover > .nav_icon{
@@ -173,7 +175,7 @@
         .nav_bar{
             width: 100%;   
             grid-column: 1/2;
-            grid-row: 1/2;
+            grid-row: 2/3;
         }
     }
 
